@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Apex — Account</title>
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <div class="phone">
+
+    <div class="header">
+      <a class="header-left" href="Settings&profile.html" style="text-decoration:none;">
+        <img class="avatar" src="icons/avatar-placeholder.png" alt="Profile">
+        <span class="app-name">#logo</span>
+      </a>
+      <div class="top-tabs">
+        <a href="Home.html">Home</a>
+        <a href="Blocker.html">Blocker</a>
+        <a href="Session.html">Sessions</a>
+        <a href="Reports.html">Reports</a>
+      </div>
+      <a class="icon-btn" href="Settings&profile.html" aria-label="Settings">
+        <img src="icons/settings.png" alt="Settings">
+      </a>
+    </div>
+
+    <div class="screens">
+      <section class="screen">
+
+        <div class="profile-card">
+          <img class="avatar-lg" id="profileAvatar" src="icons/avatar-placeholder.png" alt="Profile photo">
+          <h2 id="profileName">Alex Sterling</h2>
+          <p class="email" id="profileEmail">alex@example.com</p>
+          <span class="badge-pro">PRO MEMBER</span>
+        </div>
+
+        <div class="section-label">Preferences</div>
+        <div class="pref-row">
+          <span>Focus Mode Notifications</span>
+          <button class="toggle on" type="button"></button>
+        </div>
+        <div class="pref-row">
+          <span>Data Sync</span>
+          <button class="toggle on" type="button"></button>
+        </div>
+        <div class="pref-row" style="border-bottom:none;">
+          <span>Dark Mode</span>
+          <button class="toggle" type="button"></button>
+        </div>
+
+        <div class="section-label">Account</div>
+        <button class="settings-item" id="editProfileTrigger" type="button">
+          <span>Edit Profile</span>
+          <img src="icons/chevron-right-grey.png" alt="">
+        </button>
+        <button class="settings-item" style="border-bottom:none;" type="button">
+          <span>Privacy Policy</span>
+          <img src="icons/chevron-right-grey.png" alt="">
+        </button>
+
+        <button class="btn btn-dark" style="margin-top:24px;" type="button">
+          <img src="icons/logout.png" alt="">
+          Sign Out
+        </button>
+
+      </section>
+    </div>
+
+    <div class="nav">
+      <a class="nav-item" href="Home.html">
+        <img src="icons/home.png" alt="">
+        HOME
+      </a>
+      <a class="nav-item" href="Blocker.html">
+        <img src="icons/blocker.png" alt="">
+        BLOCKER
+      </a>
+      <a class="nav-item" href="Session.html">
+        <img src="icons/sessions.png" alt="">
+        SESSIONS
+      </a>
+      <a class="nav-item" href="Reports.html">
+        <img src="icons/reports.png" alt="">
+        REPORTS
+      </a>
+    </div>
+
+    <!-- Edit Profile modal -->
+    <div class="modal-overlay" id="profileModal">
+      <div class="modal">
+        <div class="modal-title">Edit Profile</div>
+
+        <div class="modal-avatar-wrap">
+          <button class="modal-avatar-btn" id="avatarUploadTrigger" type="button" aria-label="Change photo">
+            <img class="modal-avatar-img" id="modalAvatarPreview" src="icons/avatar-placeholder.png" alt="Profile preview">
+            <span class="modal-avatar-edit">
+              <img src="icons/plus-circle.png" alt="" style="filter:invert(1);width:14px;height:14px;">
+            </span>
+          </button>
+          <input type="file" id="avatarFileInput" accept="image/*" hidden>
+        </div>
+
+        <div class="modal-field">
+          <label for="nameInput">Display Name</label>
+          <input type="text" id="nameInput" placeholder="Enter your name" maxlength="30">
+        </div>
+
+        <div class="modal-field">
+          <label for="emailInput">Email</label>
+          <input type="text" id="emailInput" placeholder="name@example.com" maxlength="50">
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn btn-ghost" id="modalCancel" type="button">Cancel</button>
+          <button class="btn btn-primary" id="modalSave" type="button">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
