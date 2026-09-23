@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex — Log In</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="card">
+    <p class="brand">Apex</p>
+    <h1>Welcome Back</h1>
+    <p class="subtitle">
+      Log in to continue tracking your performance and pick up right where you left off.
+    </p>
+
+    <button class="google-btn" type="button">
+      <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" class="google-icon">
+      Log in with Google
+    </button>
+
+    <div class="divider"><span>OR EMAIL</span></div>
+
+    <form data-validate data-action="Logged in" data-min-password-length="1" novalidate>
+      <div class="field">
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" placeholder="Write your email" required>
+        <p class="error-message">Enter a valid email address.</p>
+      </div>
+
+      <div class="field has-toggle">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="********" required>
+        <button type="button" class="password-toggle" data-target="password" aria-label="Show password">
+        </button>
+        <p class="error-message">Enter your password.</p>
+      </div>
+
+      <div class="row-between">
+        <label class="remember">
+          <input type="checkbox" name="remember">
+          Remember me
+        </label>
+        <a href="#" class="forgot-link">Forgot password?</a>
+      </div>
+
+      <button class="primary-btn" type="submit">Log In</button>
+    </form>
+
+    <p class="switch-line">Don't have an account? <a href="index.html">Create Account</a></p>
+
+    <p class="terms">
+      By logging in, you agree to our <a href="#">Terms</a> and
+      <a href="#">Privacy Policy</a>.
+    </p>
+
+    <div class="secure">
+      SECURE ENCRYPTION ACTIVE
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
