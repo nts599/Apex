@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Apex — Blocker</title>
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <script>
+    if (!localStorage.getItem("apex_profile")) { window.location.href = "login.html"; }
+    if (localStorage.getItem("apex_dark_mode") === "true") document.body.classList.add("dark-mode");
+  </script>
+
+  <div class="phone">
+
+    <div class="header">
+      <a class="header-left" href="Settings&profile.html" style="text-decoration:none;">
+        <img class="avatar" src="pics/avatar.png" alt="Profile">
+        <span class="app-name">APEX</span>
+      </a>
+      <a class="icon-btn" href="Settings&profile.html" aria-label="Settings">
+        <img src="pics/setting.png" alt="Settings">
+      </a>
+    </div>
+
+    <div class="screens">
+      <section class="screen">
+
+        <div class="card card-blue">
+          <span class="badge">ACTIVE SESSION</span>
+          <div class="card-header-row">
+            <div>
+              <h3>Apps blocked for focus mode</h3>
+              <p>Elevating your productivity by 45% today.</p>
+            </div>
+            <button class="pill-btn" type="button" id="blockAllBtn">
+              <img src="pics/shield.png" alt="" style="width:12px;height:12px;vertical-align:-1px;margin-right:4px;">
+              Block All
+            </button>
+          </div>
+          <div class="progress-row">
+            <span>SESSION PROGRESS</span>
+            <span>42:00</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width:68%;"></div></div>
+        </div>
+
+        <div class="card-header-row" style="margin-top:4px;">
+          <div class="section-label" style="margin:0
+          ;">Installed Applications</div>
+        </div>
+
+        <div class="app-list" id="appList"></div>
+
+        <button class="add-app-row" type="button" id="addAppBtn">+ Add app to block</button>
+
+        <div class="card insight-card">
+          <div class="row">
+            <div class="col">
+              <img src="pics/focus.png" alt="" style="width:16px;height:16px;">
+              <div class="stat-label">FOCUS SCORE</div>
+              <div class="stat-value">88<span style="font-size:12px;font-weight:600;">/100</span></div>
+            </div>
+            <div class="col">
+              <img src="pics/time.png" alt="" style="width:16px;height:16px;">
+              <div class="stat-label">TIME SAVED</div>
+              <div class="stat-value">3.2<span style="font-size:12px;font-weight:600;">hrs</span></div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <div class="nav">
+      <a class="nav-item" href="Home.html">
+        <img src="pics/home icon.png" alt="">
+        HOME
+      </a>
+      <a class="nav-item active" href="Blocker.html">
+        <img src="pics/switch.png" alt="">
+        BLOCKER
+      </a>
+      <a class="nav-item" href="Session.html">
+        <img src="pics/session.png" alt="">
+        SESSIONS
+      </a>
+      <a class="nav-item" href="Reports.html">
+        <img src="pics/report.png" alt="">
+        REPORTS
+      </a>
+    </div>
+
+    <!-- Add app modal -->
+    <div class="modal-overlay" id="addAppModal">
+      <div class="modal">
+        <div class="modal-title">Add App to Block</div>
+        <div class="modal-field">
+          <label for="appNameInput">App name</label>
+          <input type="text" id="appNameInput" placeholder="e.g. TikTok" maxlength="24">
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-ghost" id="addAppCancel" type="button">Cancel</button>
+          <button class="btn btn-primary" id="addAppSave" type="button">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
